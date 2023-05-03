@@ -1,0 +1,127 @@
+/*********************************
+/* Blog Section Start
+*********************************/
+.blog__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-01.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top right;
+        z-index: -1;
+
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+.blog__post__item {
+    background: $white;
+    border-radius: $radius;
+    padding: 20px 20px 30px;
+    box-shadow: $shadow;
+    height: 100%;
+
+    @include respond(tabland) {
+        height: calc(100% - 20px);
+        margin-bottom: 20px;
+    }
+
+    .blog {
+        &__figure {
+            overflow: hidden;
+            border-radius: $radius;
+            img {
+                max-width: 385px;
+                width: 100%;
+                max-height: 220px;
+                object-fit: cover;
+                position: relative;
+                border-radius: $radius;
+                transition: $transition;
+
+                @include respond(phone) {
+                    max-width: inherit;
+                    max-height: inherit;
+                }
+            }
+        }
+        &__content {
+            padding-top: 20px;
+            h4 {
+                font-size: 22px;
+                font-weight: $semibold;
+                margin-bottom: 15px;
+
+                @include respond(tabland) {
+                    font-size: 20px;
+                }
+                @include respond(tabport) {
+                    font-size: 18px;
+                }
+                @include respond(phone) {
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $heading;
+                    text-decoration: none;
+                    display: block;
+                    transition: $transition;
+                }
+            }
+            p {
+                font-family: $inter;
+                font-size: 16px;
+                font-weight: $regular;
+                line-height: 28px;
+                color: $content;
+                margin-bottom: 0;
+            }
+        }
+        &__meta {
+            margin-bottom: 5px;
+            span a,
+            span {
+                font-family: $default;
+                font-weight: $medium;
+                font-size: 13px;
+                color: $content;
+                margin-right: 8px;
+                // text-transform: capitalize;
+                text-decoration: none;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                a {
+                    transition: $transition;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .blog {
+            &__figure {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+            &__content {
+                h4 a {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+/*********************************
+/* Blog Section End
+*********************************/

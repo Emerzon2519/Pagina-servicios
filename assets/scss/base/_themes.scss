@@ -1,0 +1,15 @@
+$themes: (
+	"light": (
+		bg-color: #eff1f5,
+	),
+	"dark": (
+		bg-color: #182037,
+	),
+);
+
+/**********
+ ** Uses
+@include themify($themes) {
+    propnname: themed('variable');  
+}
+**/

@@ -1,0 +1,121 @@
+$devices: xs, sm, md, lg, xl;
+$margin_units: mb, mt, ml, mr;
+$padding_units: px, py, pb, pt, pl, pr;
+$colors: (
+	1: #fd8b60,
+	2: #fdb143,
+	3: #fed747,
+	4: #aed443,
+	5: #a0bf60,
+);
+
+// Default gutter customizing
+@for $i from 1 through 5 {
+	.gutters-#{$i * 5} {
+		margin-right: -#{$i * 5}px;
+		margin-left: -#{$i * 5}px;
+
+		> .col,
+		> [class*="col-"] {
+			padding-right: #{$i * 5}px;
+			padding-left: #{$i * 5}px;
+		}
+	}
+}
+
+// For multi color
+// @each $rate, $color in $colors {
+// 	.ratings-#{$rate} {
+// 		&::before {
+// 			background-color: #{$color} !important;
+// 		}
+// 	}
+// }
+
+// Dynamic Blur - 100 to 600
+// @for $i from 1 through 6 {
+// 	.blur-#{$i * 100} {
+// 		filter: blur($i * 100 + px) !important;
+// 	}
+// }
+
+// margins
+@each $m in $margin_units {
+	@for $i from 1 to 21 {
+		@if (($i * 5) < 10) {
+			.#{$m}-#{"0" + $i * 5} {
+				@if ($m == "mt") {
+					margin-top: #{$i * 5+"px"} !important;
+				} @else if ($m == "mb") {
+					margin-bottom: #{$i * 5+"px"} !important;
+				} @else if ($m == "ml") {
+					margin-left: #{$i * 5+"px"} !important;
+				} @else if ($m == "mr") {
+					margin-right: #{$i * 5+"px"} !important;
+				}
+			}
+		} @else {
+			.#{$m}-#{$i * 5} {
+				@if ($m == "mt") {
+					margin-top: #{$i * 5+"px"} !important;
+				} @else if ($m == "mb") {
+					margin-bottom: #{$i * 5+"px"} !important;
+				} @else if ($m == "ml") {
+					margin-left: #{$i * 5+"px"} !important;
+				} @else if ($m == "mr") {
+					margin-right: #{$i * 5+"px"} !important;
+				}
+			}
+		}
+	}
+}
+
+// paddings
+@each $p in $padding_units {
+	@for $i from 1 to 10 {
+		@if (($i * 5) < 10) {
+			.#{$p}-#{"0" + $i * 5} {
+				@if ($p == "pt") {
+					padding-top: #{$i * 5+"px"} !important;
+				} @else if ($p == "pb") {
+					padding-bottom: #{$i * 5+"px"} !important;
+				} @else if ($p == "pl") {
+					padding-left: #{$i * 5+"px"} !important;
+				} @else if ($p == "pr") {
+					padding-right: #{$i * 5+"px"} !important;
+				} @else if ($p == "px") {
+					padding-left: #{$i * 5+"px"} !important;
+					padding-right: #{$i * 5+"px"} !important;
+				} @else if ($p == "py") {
+					padding-top: #{$i * 5+"px"} !important;
+					padding-bottom: #{$i * 5+"px"} !important;
+				}
+			}
+		} @else {
+			.#{$p}-#{$i * 5} {
+				@if ($p == "pt") {
+					padding-top: #{$i * 5+"px"} !important;
+				} @else if ($p == "pb") {
+					padding-bottom: #{$i * 5+"px"} !important;
+				} @else if ($p == "pl") {
+					padding-left: #{$i * 5+"px"} !important;
+				} @else if ($p == "pr") {
+					padding-right: #{$i * 5+"px"} !important;
+				} @else if ($p == "px") {
+					padding-left: #{$i * 5+"px"} !important;
+					padding-right: #{$i * 5+"px"} !important;
+				} @else if ($p == "py") {
+					padding-top: #{$i * 5+"px"} !important;
+					padding-bottom: #{$i * 5+"px"} !important;
+				}
+			}
+		}
+	}
+}
+
+// Text font size
+@for $i from 10 to 33 {
+	.text-#{$i} {
+		font-size: #{$i}px !important;
+	}
+}

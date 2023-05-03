@@ -1,0 +1,163 @@
+/*********************************
+/* Contact Section Start
+*********************************/
+
+.contact__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-03.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: bottom right;
+        z-index: -1;
+
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+    &::before {
+        @include pseudo;
+        background-image: url("../images/bg-shape-06.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top left;
+        z-index: -1;
+
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+
+.contact__form {
+    .input__group {
+        label {
+            font-family: $inter;
+            font-size: 16px;
+            font-weight: $regular;
+            line-height: 22px;
+            color: $content;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            font-family: $default;
+            font-size: 16px;
+            color: $content;
+            background: $white;
+            font-weight: $regular;
+            border-radius: $radius;
+            border: 1px solid #d6dbe5;
+            height: 60px;
+            display: block;
+            margin-bottom: 15px;
+            padding: 15px;
+
+            &:focus {
+                box-shadow: none;
+                border-color: $primary;
+            }
+            &::placeholder {
+                text-transform: capitalize;
+            }
+            &:hover {
+                border-color: $primary;
+            }
+        }
+        .text__area {
+            height: 140px;
+            resize: none;
+        }
+    }
+    .submit__btn {
+        text-transform: uppercase;
+        height: 55px;
+        line-height: 15px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.space {
+    width: 91px;
+    height: 100%;
+}
+
+.contact__box__wrap {
+    background: $white;
+    padding: 34px 20px;
+    border-radius: $radius;
+    display: flex;
+    align-items: center;
+    box-shadow: $shadow;
+    margin-top: 20px;
+    margin-left: 15.33333333%;
+
+    @include respond(medium) {
+        margin-left: 0;
+    }
+    @include respond(tabport) {
+        margin: 0px 0px 20px;
+    }
+
+    .icon {
+        height: 66px;
+        width: 66px;
+        background: $primary;
+        border-radius: 50%;
+        @include flexbox($a: center, $jc: center);
+
+        img {
+            width: 32px;
+            height: auto;
+            display: block;
+        }
+    }
+    .contact__inform {
+        margin-left: 20px;
+        flex: 1;
+        span {
+            font-family: $default;
+            font-size: 18px;
+            font-weight: $medium;
+            line-height: 22px;
+            color: $content;
+            margin-bottom: 8px;
+            display: block;
+        }
+        p,
+        a {
+            font-family: $inter;
+            font-size: 15px;
+            font-weight: $regular;
+            line-height: 24px;
+            color: $content;
+            display: block;
+            text-decoration: none;
+            transition: $transition;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.map__section {
+    padding-bottom: 100px;
+
+    @include respond(phone) {
+        padding-bottom: 50px;
+    }
+}
+#map iframe {
+    height: 380px;
+    width: 100%;
+    border-radius: $radius;
+}
+
+/*********************************
+/* Contact Section End
+*********************************/

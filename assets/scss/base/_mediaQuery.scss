@@ -1,0 +1,69 @@
+/**
+ * For max-width media query, device width are sets as::after
+ * xl = 1440
+ * medium = 1199
+ * tabland = 991
+ * tabport = 767
+ * phone
+ * phone-sm
+ * phone-mid
+ * phone-xm
+ */
+
+@mixin respond($device1, $device2: null) {
+    @if $device2 == null {
+        @if $device1 == xl {
+            @media screen and (max-width: 1440px) {
+                @content;
+            }
+        } @else if $device1 == medium {
+            @media screen and (max-width: 1199px) {
+                @content;
+            }
+        } @else if $device1 == tabland {
+            @media screen and (max-width: 991px) {
+                @content;
+            }
+        } @else if $device1 == tabport {
+            @media screen and (max-width: 767px) {
+                @content;
+            }
+        } @else if $device1 == phone {
+            @media screen and (max-width: 575px) {
+                @content;
+            }
+        } @else if $device1 == phone-sm {
+            @media screen and (max-width: 479px) {
+                @content;
+            }
+        } @else if $device1==phone-mid {
+            @media screen and (max-width: 400px) {
+                @content;
+            }
+        } @else if $device1==phone-xm {
+            @media screen and (max-width: 375px) {
+                @content;
+            }
+        }
+    } @else if $device1 == null {
+        @if ($device2 == lg) {
+            @media screen and (min-width: 1200px) {
+                @content;
+            }
+        } @else if $device2 == tabland {
+            @media screen and (min-width: 992px) {
+                @content;
+            }
+        }
+    } @else {
+        @if $device1 == xl and $device2 == md-xl {
+            @media (min-width: 1441px) and (max-width: 1600px) {
+                @content;
+            }
+        } @else if $device1 == tabport and $device2 == tabland {
+            @media (min-width: 768px) and (max-width: 991px) {
+                @content;
+            }
+        }
+    }
+}

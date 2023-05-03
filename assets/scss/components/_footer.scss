@@ -1,0 +1,169 @@
+/*********************************
+/* Footer Section Start
+*********************************/
+.footer__section {
+    background: $white;
+    padding: 80px 0px 0px;
+    position: relative;
+    border-top: 1px solid #f1f1f1;
+
+    @include respond(phone) {
+        padding-top: 40px;
+    }
+}
+
+.footer__widget {
+    @include respond(tabland) {
+        margin-bottom: 30px;
+    }
+    .logo {
+        margin-bottom: 30px;
+        img {
+            width: auto;
+            height: auto;
+            display: block;
+        }
+    }
+    p {
+        font-family: $inter;
+        font-size: 16px;
+        color: $content;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+    .social__icon {
+        margin-top: 30px;
+        ul {
+            @include flexbox($a: center, $jc: flex-start);
+            li {
+                list-style: none;
+                a {
+                    font-size: 18px;
+                    color: $white;
+                    background: $heading;
+                    height: 40px;
+                    width: 40px;
+                    @include flexbox($a: center, $jc: center);
+                    border-radius: $radius;
+                    margin-right: 15px;
+                    text-decoration: none;
+                    transition: $transition;
+
+                    &:hover {
+                        background: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .widget__title {
+        h4 {
+            font-family: $default;
+            font-weight: $medium;
+            font-size: 22px;
+            display: inline-block;
+            margin-bottom: 28px;
+            color: $heading;
+
+            @include respond(phone-sm) {
+                font-size: 22px;
+            }
+        }
+    }
+    .widget__list {
+        list-style: none;
+        li {
+            list-style: none;
+            p,
+            a {
+                font-family: $inter;
+                font-size: 16px;
+                color: $content;
+                line-height: 24px;
+                font-weight: $regular;
+                color: $content;
+                display: flex;
+                align-items: baseline;
+                margin-bottom: 10px;
+                text-decoration: none;
+                transition: $transition;
+
+                &:hover {
+                    color: $primary;
+                }
+
+                i,
+                img {
+                    width: auto;
+                    height: auto;
+                    display: block;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}
+
+.footer__bottom {
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 80px;
+    @include respond(phone) {
+        margin-top: 0;
+    }
+    .footer__content {
+        padding: 20px 0px;
+        border-top: 1px solid #f1f1f1;
+        @include flexbox($a: center, $jc: space-between);
+
+        @include respond(tabland) {
+            display: block;
+        }
+    }
+    .content p {
+        font-size: 16px;
+        font-weight: $regular;
+        line-height: 24px;
+        color: $content;
+        text-transform: capitalize;
+        margin-bottom: 0;
+    }
+    .link {
+        a {
+            font-family: $inter;
+            font-size: 16px;
+            font-weight: $regular;
+            line-height: 24px;
+            color: $content;
+            display: inline-block;
+            position: relative;
+            margin-left: 16px;
+            text-decoration: none;
+            transition: $transition;
+
+            &:hover {
+                color: $primary;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: -10px;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 13px;
+                background: #d9dbe1;
+            }
+            &:last-of-type::before {
+                display: none;
+            }
+        }
+        @include respond(tabland) {
+            margin-top: 20px;
+        }
+    }
+}
+/*********************************
+/* Footer Section End
+*********************************/

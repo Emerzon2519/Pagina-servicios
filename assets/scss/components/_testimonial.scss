@@ -1,0 +1,117 @@
+/*********************************
+/* Single Testimonial Start
+*********************************/
+.testimonial__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-05.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top left;
+        z-index: -1;
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+
+.testimonial__single__slide {
+    @include carousel-nav;
+}
+.single__testimonial {
+    background: $white;
+    border-radius: $radius;
+    position: relative;
+    display: block;
+    padding: 40px;
+    margin: 10px 0px 30px;
+    box-shadow: $shadow;
+
+    @include respond(medium-xl) {
+        padding: 40px 30px;
+    }
+    .client__discription {
+        p {
+            margin-bottom: 0;
+        }
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background: #ededed;
+            padding: 0px 8px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            height: 24px;
+
+            a {
+                color: #ffa63a;
+                font-size: 12px;
+                display: inline-block;
+                margin-right: 2px;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+        .date {
+            position: relative;
+            display: block;
+            padding-bottom: 16px;
+
+            p {
+                font-size: 14px;
+                color: $content;
+            }
+        }
+    }
+    .client__info {
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+
+        .image__box {
+            img {
+                width: 60px;
+                height: 60px;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+        .info__box {
+            position: relative;
+            display: block;
+            padding-left: 15px;
+            h5 {
+                font-family: $default;
+                font-size: 19px;
+                line-height: 18px;
+                font-weight: $medium;
+                margin-bottom: 0;
+                a {
+                    color: $heading;
+                    font-weight: $semibold;
+                    text-decoration: none;
+                    transition: $transition;
+                }
+            }
+            span {
+                font-family: $inter;
+                font-weight: $medium;
+                font-size: 15px;
+            }
+        }
+    }
+    &:hover {
+        .info__box {
+            h5 a {
+                color: $primary;
+            }
+        }
+    }
+}
+/*********************************
+/* Single Testimonial End
+*********************************/

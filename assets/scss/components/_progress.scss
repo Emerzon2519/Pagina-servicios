@@ -1,0 +1,115 @@
+// ==============================
+// Progress Section Start
+// ==============================
+
+.skill__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-01.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top right;
+        z-index: -1;
+
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+.skill__wrapper {
+    @include respond(tabland) {
+        margin-bottom: 30px;
+    }
+}
+.radial__progress {
+    &__pie {
+        position: relative;
+        @include flexbox($a: center, $jc: center);
+        flex-direction: column-reverse;
+        &__svg {
+            position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 170px;
+            overflow: hidden;
+            vertical-align: middle;
+            background: $white;
+            border-radius: 50%;
+            filter: drop-shadow(0px 0px 20px rgba(170, 170, 170, 0.161));
+
+            @include respond(phone-sm) {
+                width: 150px;
+                height: 150px;
+            }
+            @include respond(phone-xm) {
+                width: 130px;
+                height: 130px;
+            }
+
+            & svg {
+                position: absolute;
+                display: inline-block;
+                // top: 0;
+                // left: 0;
+                // width: 100%;
+                // height: 100%;
+                margin: 0 auto;
+                width: 150px;
+                height: 150px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                @include respond(phone-sm) {
+                    width: 130px;
+                    height: 130px;
+                }
+                @include respond(phone-xm) {
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+        }
+        &__number {
+            font-family: $default;
+            font-size: 34px;
+            line-height: 39px;
+            color: $heading;
+            font-weight: $medium;
+            margin-bottom: 0;
+
+            @include respond(phone-sm) {
+                font-size: 25px;
+                line-height: 35px;
+            }
+        }
+        p {
+            font-family: $default;
+            font-size: 20px;
+            font-weight: $medium;
+            color: $heading;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+    }
+    &__content {
+        position: absolute;
+        top: 31%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+
+        @include respond(phone-sm) {
+            top: 30%;
+        }
+        @include respond(phone-xm) {
+            top: 27%;
+        }
+    }
+}
+
+// ==============================
+// Progress Section End
+// ==============================

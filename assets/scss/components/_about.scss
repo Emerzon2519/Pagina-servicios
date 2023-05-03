@@ -1,0 +1,113 @@
+/*********************************
+/*  About Section Start
+*********************************/
+
+.about__section {
+    position: relative;
+    padding-top: 100px;
+
+    @include respond(phone) {
+        padding-top: 60px;
+    }
+}
+.about__wrapper {
+    .ab {
+        &__title {
+            font-size: 48px;
+            font-weight: $bold;
+            margin-bottom: 42px;
+
+            @include respond(phone) {
+                font-size: 32px;
+                line-height: 34px;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+        }
+        &__content {
+            p {
+                font-size: 19px;
+                line-height: 32px;
+                margin-bottom: 12px;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                @include respond(phone) {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__btn {
+            margin-top: 40px;
+
+            @include respond(phone) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.list__item {
+    ul {
+        list-style: none;
+        @include flexbox($a: flex-start, $jc: space-between);
+        li {
+            font-family: $inter;
+            font-size: 20px;
+            line-height: 32px;
+            color: $content;
+            flex-basis: 50%;
+            max-width: 50%;
+            @include flexbox($a: center, $jc: flex-start);
+            margin-top: 20px;
+            text-transform: capitalize;
+
+            .icon {
+                margin-right: 10px;
+                img {
+                    width: 24px;
+                    height: auto;
+                }
+            }
+
+            @include respond(phone) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.about__figure {
+    position: relative;
+
+    @include respond(tabland) {
+        display: none;
+    }
+    .ab {
+        &__image {
+            img {
+                width: auto;
+            }
+            // position: absolute;
+            // bottom: 0;
+            // max-width: 426px;
+            // width: 100%;
+            // left: 50%;
+            // transform: translateX(-50%);
+        }
+        &__shape {
+            width: 100%;
+            margin: auto;
+            max-width: 500px;
+            img {
+                // width: 390px;
+            }
+        }
+    }
+}
+
+/*********************************
+/*  About Section End
+*********************************/

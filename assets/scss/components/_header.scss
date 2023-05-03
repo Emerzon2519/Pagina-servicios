@@ -1,0 +1,167 @@
+/*********************************
+/* Header Start
+*********************************/
+.header {
+    padding: 25px 0;
+    position: fixed;
+    background: transparent;
+    width: 100%;
+    transition: all 0.5s;
+    z-index: 999;
+
+    @include respond(tabland) {
+        background: #e9feff;
+        padding: 20px 0px;
+    }
+    @include respond(phone) {
+        padding: 25px 10px;
+    }
+
+    .navbar {
+        padding: 0;
+        .navbar-right {
+            @include flexbox($a: center, $jc: space-between);
+            width: 100%;
+            z-index: 999;
+
+            .mobile__wrapper {
+                @include flexbox($a: center, $jc: space-between);
+
+                @include respond(tabland) {
+                    width: 100%;
+                }
+                .logo {
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+
+            .nav-item {
+                @include flexbox($a: center, $jc: center);
+                list-style: none;
+                margin-left: auto;
+                @include respond(tabland) {
+                    display: none;
+                    margin-left: inherit;
+                    width: 100%;
+                    padding-top: 20px;
+                }
+
+                li {
+                    a {
+                        font-family: $default;
+                        font-size: 16px;
+                        font-weight: $semibold;
+                        color: $black;
+                        display: inline-block;
+                        margin-right: 30px;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        transition: $transition;
+
+                        @include respond(tabland) {
+                            margin-right: 0;
+                            padding: 5px;
+                            display: block;
+                        }
+
+                        &.active,
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                    &:last-child a {
+                        margin-right: 0;
+                    }
+                }
+            }
+            .header-right {
+                align-items: center;
+                margin-left: 20px;
+                display: none;
+
+                @include respond(tabland) {
+                    display: flex;
+                }
+
+                .action__btn {
+                    .btn {
+                        height: 50px;
+                        padding: 9px 29px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#menuTaggler {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    display: none;
+    z-index: 999;
+    @include flexbox($a: center, $jc: center);
+
+    @include respond(tabland) {
+        display: flex;
+    }
+
+    .menu-bar {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: $black;
+        &:before,
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: $black;
+            top: -10px;
+            transition: all 0.3s;
+        }
+        &:after {
+            top: auto;
+            bottom: -10px;
+        }
+        &.close {
+            background: transparent;
+            &:before {
+                transform: rotate(45deg);
+                top: 48%;
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+                top: 48%;
+            }
+        }
+    }
+}
+
+.nav-bg {
+    background: $white;
+    padding: 25px 0;
+    box-shadow: 0 22px 20px rgba(0, 0, 0, 0.05);
+
+    @include respond(tabland) {
+        padding: 20px 0px;
+    }
+    @include respond(phone) {
+        padding: 20px 10px;
+    }
+}
+
+/*********************************
+/* Header End
+*********************************/

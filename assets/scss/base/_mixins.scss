@@ -1,0 +1,145 @@
+@mixin pseudo($t: 0, $r: 0, $b: 0, $l: 0) {
+    content: "";
+    position: absolute;
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+}
+
+@mixin bg-props($s: cover, $p: center top, $r: no-repeat) {
+    background-size: $s;
+    background-position: $p;
+    background-repeat: $r;
+}
+@mixin bg-overlay($t: 0, $r: 0, $b: 0, $l: 0) {
+    position: absolute;
+    content: "";
+    top: $t;
+    left: $l;
+    right: $r;
+    bottom: $b;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    // z-index: -1;
+}
+@mixin flexbox($a: inherit, $jc: space-between) {
+    align-items: $a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $jc;
+}
+@mixin transform($t: 50%, $l: 50%) {
+    position: absolute;
+    top: $t;
+    left: $l;
+    transform: translate(-$t, -$l);
+}
+
+@mixin section-title {
+    .section__title {
+        margin-bottom: 50px;
+        max-width: 560px;
+        .sec {
+            &__title {
+                margin-bottom: 25px;
+                text-transform: capitalize;
+            }
+            &__content {
+                margin-bottom: 0;
+            }
+        }
+        &.text-center {
+            margin: 0 auto 50px;
+        }
+        &.text-start {
+            margin-right: auto;
+        }
+        &.text-end {
+            margin-left: auto;
+        }
+    }
+}
+
+@mixin carousel-nav {
+    .owl-carousel {
+        .owl-dots {
+            @include flexbox($a: center, $jc: center);
+
+            button {
+                height: 8px;
+                width: 15px;
+                background: $primary;
+                border-radius: 30px;
+                display: block;
+                border: none;
+                outline: none;
+                margin: 10px 5px 0px;
+                position: relative;
+                transition: $transition;
+
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: 50%;
+                //     left: 50%;
+                //     height: 15px;
+                //     width: 15px;
+                //     border-radius: 50%;
+                //     transform: translate(-50%, -50%);
+                //     background: $primary;
+                //     opacity: 0.3;
+                //     transition: $transition;
+                // }
+
+                &.active {
+                    width: 30px;
+                    // &::before {
+                    //     background: $primary;
+                    //     opacity: 1;
+                    // }
+                }
+                @include respond(phone-xm) {
+                    margin: 10px 5px;
+                }
+            }
+        }
+        .owl-nav {
+            position: absolute;
+            bottom: -80px;
+            width: 100%;
+            display: none;
+            font-size: 14px;
+            transition: $transition;
+            text-align: center;
+
+            button {
+                height: 50px;
+                width: 50px;
+                border-radius: 50px;
+                border: none;
+                outline: none;
+                background: $white;
+                transition: $transition;
+                box-shadow: 0px 19px 24px rgba(185, 185, 185, 0.5);
+                &.owl-prev {
+                    margin-right: 10px;
+
+                    &:hover {
+                        background: $primary;
+                        color: $white;
+                    }
+                }
+                &.owl-next {
+                    margin-left: 10px;
+
+                    &:hover {
+                        background: $primary;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

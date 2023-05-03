@@ -1,0 +1,126 @@
+/*********************************
+/*  Portfolio Section Start
+*********************************/
+
+.portfolio__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-03.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top right;
+        z-index: -1;
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+.filter__menu {
+    margin-bottom: 40px;
+    .filter__bttn {
+        font-family: $default;
+        color: #2b2b2b;
+        font-size: 18px;
+        font-weight: $medium;
+        line-height: 19px;
+        height: 43px;
+        min-width: 130px;
+        padding: 5px 15px;
+        border-radius: $radius;
+        background: $white;
+        outline: none;
+        border: none;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &.mixitup-control-active {
+            background: $primary;
+            color: $white;
+        }
+    }
+}
+
+.portfolio__items {
+    margin-bottom: 20px;
+    .portfolio__single__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: $radius;
+
+        .portfolio__image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: relative;
+            border-radius: $radius;
+            transition: $transition;
+        }
+        .portfolio__overlay {
+            height: 100%;
+            width: 100%;
+            background: rgba($black, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 8px;
+            @include flexbox($a: center, $jc: center);
+
+            a {
+                color: $white;
+                height: 60px;
+                width: 60px;
+                background: $primary;
+                border-radius: 50%;
+                @include flexbox($a: center, $jc: center);
+            }
+        }
+    }
+    &:hover {
+        .portfolio__image {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.portfolio__visible__titles {
+    font-family: $default;
+    background: $white;
+    font-size: 18px;
+    padding: 7px 15px;
+    font-weight: $medium;
+    color: $heading;
+    position: fixed;
+    white-space: nowrap;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    width: 200px;
+    border-radius: 8px 8px 8px 0px;
+    display: inline-block;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    .title__sub {
+        position: absolute;
+        background: $white;
+        top: 100%;
+        left: 0;
+        margin-top: -10px;
+        font-size: 16px;
+        font-weight: $medium;
+        padding: 5px 15px;
+        color: $content;
+        border-radius: 0px 0px 8px 8px;
+    }
+}
+
+/*********************************
+/*  Portfolio Section End
+*********************************/

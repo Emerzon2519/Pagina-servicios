@@ -1,0 +1,72 @@
+/*********************************
+/*  Service Section Start
+*********************************/
+.service__section {
+    position: relative;
+
+    &::after {
+        @include pseudo;
+        background-image: url("../images/bg-shape-02.png");
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: top left;
+        z-index: -1;
+
+        @include respond(tabland) {
+            display: none;
+        }
+    }
+}
+
+.service__icon__box {
+    background: $white;
+    padding: 40px 30px;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    margin-bottom: 15px;
+    position: relative;
+    transition: $transition;
+
+    @include respond(phone-sm) {
+        padding: 40px 22px;
+    }
+    .s {
+        &__icon {
+            height: 70px;
+            width: auto;
+            margin-bottom: 31px;
+
+            img {
+                width: auto;
+                height: auto;
+                display: inline-block;
+            }
+        }
+        &__content {
+            h5 {
+                font-family: $inter;
+                font-size: 20px;
+                font-weight: $medium;
+                line-height: 28px;
+                margin-bottom: 15px;
+                text-transform: capitalize;
+
+                a {
+                    color: $heading;
+                    text-decoration: none;
+                    transition: $transition;
+                    display: block;
+                }
+            }
+        }
+    }
+    &:hover {
+        h5 a {
+            color: $primary;
+        }
+    }
+}
+
+/*********************************
+/*  Service Section End
+*********************************/
